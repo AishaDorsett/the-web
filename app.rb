@@ -20,7 +20,15 @@ end
     "this is Aisha's page!"
   end
 
-  get '/cat' do
+  get '/random-cat' do
     @name = ["Amigo", "Misty", "Almond"].sample
+    erb(:index)
+  end
+
+  get '/named-cat' do
+    p params
+    @name = params[:name]
+    @age = params[:age]
+    @quote = params[:quote]
     erb(:index)
   end
